@@ -23,7 +23,7 @@ if get_use() == "Агент прямых продаж":
         # Проверка страницы логина
         login_page.should_be_login_page()
         # Вынести вверх
-        login_page.authorization(name="sseleznev", password="test")
+        login_page.authorization(name="sseleznev", password="")
 
     def test_create_app(browser):
         maine_page = MainPage(browser, browser.current_url)

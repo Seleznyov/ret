@@ -25,7 +25,7 @@ def setup(browser):
 @pytest.mark.parametrize('name', ["vtb_admin","vtb_under","vtb_limit_owner","vtb_risk_boss","vtb_auditor","vtb_risk_admin"])
 def test_view(browser, name):
     login_page = LoginPage(browser, browser.current_url)
-    login_page.authorization(name=name, password="$EcUr!t@s")
+    login_page.authorization(name=name, password="")
     maine_page = MainPage(browser, browser.current_url)
     maine_page.page_open_queues()
     time.sleep(2)
