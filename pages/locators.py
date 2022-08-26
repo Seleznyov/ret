@@ -28,6 +28,17 @@ class ShortForm():
     ChoiceDsa = (By.XPATH, "//perfect-scrollbar[1]/div[1]/div[1]/div[1]/mat-option[1]/span[1]")
     CreateApp = (By.XPATH, "//mat-tab-body/div[1]/app-credit-app[1]/form[1]/div[2]/mat-app-button[1]/button[1]")
 
+class Decision_Final():
+    RightArrow = (By.XPATH, "//mat-tab-header/div[3]/div[1]")
+    LeftArrow = (By.XPATH, "//mat-tab-header/div[1]/div[1]")
+    DocumentsTab = (By.XPATH, "//div[contains(text(),'Документы')]")
+    AddFile = (By.XPATH, "//ng-documents[1]/div[1]/mat-app-button[1]/button[1]/span[1]")
+    TypeFile = (By.XPATH, "//form[1]/mat-app-search-select[1]/div[1]/mat-form-field[1]")
+    TypeFileAgreement = (By.XPATH, "//span[contains(text(),'Согласие на сбор и обработку данных')]")
+    TypeFilFatca = (By.XPATH, "//span[contains(text(),'FATCA/CRS/ПОДФТ')]")
+    ButtonSelectFile = (By.XPATH, "//input[@id='image-upload']")
+    DownloadFile = (By.XPATH, "//span[contains(text(),'Загрузить файл')]")
+
 # class QueuesPage():
 class AppLocators():
     Block1 = (By.XPATH, "//div[1]/app-layout-for-steps[1]/mat-accordion[1]/mat-expansion-panel[1]/mat-expansion-panel-header[1]/span[1]/mat-panel-title[1]/div[1]/div[2]")

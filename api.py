@@ -1,6 +1,6 @@
 import requests
 root_url="http://192.168.50.62:8080/vtb-retail/api/v1/app/"
-data = {"grant_type": "password", "username": "sseleznev", "password": ""}
+data = {"grant_type": "password", "username": "sseleznev", "password": "@v1rST0R"}
 
 def authorization():
     url = f'{root_url}oauth/token?grant_type={data["grant_type"]}&username={data["username"]}' \

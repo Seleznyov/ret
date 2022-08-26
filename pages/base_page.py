@@ -2,7 +2,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from .locators import BasePageLocators, ShortForm,AppLocators
+from .locators import BasePageLocators, ShortForm,AppLocators,Decision_Final
 
 import time
 import requests
@@ -81,6 +81,34 @@ class BasePage():
 
     def verification_is_not_view(self):
         assert self.is_not_element_present(*BasePageLocators.VerificationTab), "tab  is not present"
+
+    def add_document_on_decision_final(self):
+        RightArrow = self.browser.find_element(*Decision_Final.RightArrow)
+        RightArrow.click()
+        DocumentsTab = self.browser.find_element(*Decision_Final.DocumentsTab)
+        DocumentsTab.click()
+
+        AddFile = self.browser.find_element(*Decision_Final.AddFile)
+        AddFile.click()
+        TypeFile = self.browser.find_element(*Decision_Final.TypeFile)
+        TypeFile.click()
+        TypeFileAgreement = self.browser.find_element(*Decision_Final.TypeFileAgreement)
+        TypeFileAgreement.click()
+        ButtonSelectFile = self.browser.find_element(*Decision_Final.ButtonSelectFile)
+        ButtonSelectFile.send_keys("D:/CDP/ret/files/TestFile.pdf")
+        DownloadFile = self.browser.find_element(*Decision_Final.DownloadFile)
+        DownloadFile.click()
+        time.sleep(3)
+        AddFile = self.browser.find_element(*Decision_Final.AddFile)
+        AddFile.click()
+        TypeFile = self.browser.find_element(*Decision_Final.TypeFile)
+        TypeFile.click()
+        TypeFilFatca = self.browser.find_element(*Decision_Final.TypeFilFatca)
+        TypeFilFatca.click()
+        ButtonSelectFile = self.browser.find_element(*Decision_Final.ButtonSelectFile)
+        ButtonSelectFile.send_keys("D:/CDP/ret/files/TestFile.pdf")
+        DownloadFile = self.browser.find_element(*Decision_Final.DownloadFile)
+        DownloadFile.click()
 
 
 

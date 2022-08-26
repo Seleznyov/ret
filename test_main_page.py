@@ -23,7 +23,7 @@ if get_use() == "Агент прямых продаж":
         # Проверка страницы логина
         login_page.should_be_login_page()
         # Вынести вверх
-        login_page.authorization(name="sseleznev", password="")
+        login_page.authorization(name="sseleznev", password="@v1rST0R")
 
     def test_create_app(browser):
         maine_page = MainPage(browser, browser.current_url)
@@ -61,6 +61,24 @@ if get_use() == "Агент прямых продаж":
         queues_page.find_app(fin=fin)
         time.sleep(5)
         queues_page.status_app()
+
+
+def test_decision_final(browser):
+    link = "https://vtb.pstlabs.by/vtb-retail/#/login"
+    login_page = LoginPage(browser, link)
+    login_page.open()
+    # Проверка страницы логина
+    login_page.should_be_login_page()
+    # Вынести вверх
+    login_page.authorization(name="vtb_credit_manager", password="$EcUr!t@s")
+    maine_page = MainPage(browser, browser.current_url)
+    maine_page.find_app(fin="T899530")
+    maine_page.open_app()
+    maine_page.add_document_on_decision_final()
+
+    time.sleep(10)
+
+
 
 
 

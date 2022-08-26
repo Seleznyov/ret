@@ -15,3 +15,7 @@ class MainPage(BasePage):
     def page_open_queues(self):
         QueuesPage = self.browser.find_element(*BasePageLocators.Queues)
         QueuesPage.click()
+
+    def open_app(self):
+        SearchResult = self.browser.find_element(*BasePageLocators.SearchResult)
+        SearchResult.click()

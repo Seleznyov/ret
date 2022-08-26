@@ -12,7 +12,7 @@ import time
 #Перед тестом меняем мок делаем так чтобы заявка пошла на верефикацию
 # Прогнать заявку на этап Верефикация
 # Взять фин заявки
-fin = "T614552"
+fin = "T749840"
 
 @pytest.fixture(scope="function", autouse=True)
 def setup(browser):
@@ -25,15 +25,16 @@ def setup(browser):
 @pytest.mark.parametrize('name', ["vtb_admin","vtb_under","vtb_limit_owner","vtb_risk_boss","vtb_auditor","vtb_risk_admin"])
 def test_view(browser, name):
     login_page = LoginPage(browser, browser.current_url)
-    login_page.authorization(name=name, password="")
+    login_page.authorization(name=name, password="$EcUr!t@s")
     maine_page = MainPage(browser, browser.current_url)
     maine_page.page_open_queues()
     time.sleep(2)
     queues_page = QueuesPage(browser, browser.current_url)
     queues_page.should_be_queues_page()
     queues_page.find_app(fin=fin)
+    time.sleep(3)
     queues_page.open_app()
-    time.sleep(5)
+    time.sleep(3)
     queues_page.verification_view()
 
 @pytest.mark.parametrize('name', ["vtb_credit_manager","vtb_call_center","vtb_call_center_boss",
